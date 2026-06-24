@@ -452,21 +452,7 @@
 
   <script src="./scripts/like.js"></script>
 
-  <script>
-    const dialog = document.getElementById('save-dialog');
-    const openButton = document.querySelector('.footer__save-button');
-    const closeButton = document.getElementById('dialog-close-btn');
-
-    openButton.addEventListener('click', function(event) {
-      event.preventDefault();   // ← Добавить, если кнопка внутри формы
-      dialog.showModal();
-    });
-
-    closeButton.addEventListener('click', function(event) {
-      event.preventDefault();   // ← Добавить, если кнопка внутри формы
-      dialog.close();
-    });
-  </script>
+  <script src="./scripts/event-handlers.js"></script>
 </body>
 
 </html>

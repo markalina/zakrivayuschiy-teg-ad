@@ -26,9 +26,7 @@
   background-position: center;
 }
 
-/* ======================================== */
 /* ШАПКА */
-/* ======================================== */
 
 .header {
   background-color: var(--background-color, #ffffff);
@@ -116,9 +114,7 @@
   fill: var(--background-color, #ffffff);
 }
 
-/* ======================================== */
 /* ОСНОВНОЙ КОНТЕНТ */
-/* ======================================== */
 
 .main {
   display: flex;
@@ -129,9 +125,7 @@
   margin-bottom: 50px;
 }
 
-/* ======================================== */
 /* КАРТОЧКА */
-/* ======================================== */
 
 .card {
   max-width: 100%;
@@ -169,42 +163,34 @@
   display: block;
 }
 
-/* Карточка 1: Старт — тёплая сепия */
 .filter-start {
   filter: sepia(0.5) brightness(1.05) saturate(1.1);
 }
 
-/* Карточка 2: Чистый лист — холодная свежесть */
 .filter-clean {
   filter: brightness(1.05) contrast(1.1) saturate(1.2) hue-rotate(-5deg);
 }
 
-/* Карточка 3: Тревога — множественный фильтр (размытие + затемнение + холод) */
 .filter-anxiety {
   filter: blur(1.2px) brightness(0.75) saturate(0.5) hue-rotate(15deg) contrast(0.9);
 }
 
-/* Карточка 4: Идеал — резкость и насыщенность */
 .filter-perfect {
   filter: contrast(1.3) saturate(1.4) brightness(1.05);
 }
 
-/* Карточка 5: Тепло — тёплый оттенок и мягкость */
 .filter-warm {
   filter: sepia(0.4) saturate(1.1) brightness(1.02) hue-rotate(-10deg);
 }
 
-/* Карточка 6: Стратегия — холодный и аналитический оттенок */
 .filter-strategy {
   filter: saturate(0.7) hue-rotate(20deg) brightness(0.95) contrast(1.05);
 }
 
-/* Карточка 7: Усталость — приглушённые цвета, размытие */
 .filter-fog {
   filter: blur(0.8px) brightness(0.8) saturate(0.5) grayscale(0.3);
 }
 
-/* Карточка 8: Осознание — яркость, контраст, лёгкий тёплый оттенок */
 .filter-here {
   filter: brightness(1.1) contrast(1.15) saturate(1.1) sepia(0.1);
 }
@@ -251,9 +237,7 @@
   gap: 27px;
 }
 
-/* ======================================== */
 /* КНОПКИ В КАРТОЧКЕ */
-/* ======================================== */
 
 .card__button {
   display: flex;
@@ -285,9 +269,7 @@
   border: 2px solid var(--text-color, #000000);
 }
 
-/* ======================================== */
 /* АНИМАЦИЯ СЕРДЦА */
-/* ======================================== */
 
 .like-icon {
   display: block;
@@ -327,39 +309,31 @@
   transition: --core-fill 0.3s ease, --body-fill 0.3s ease 0.05s;
 }
 
-/* ======================================== */
 /* СОСТОЯНИЕ .is-liked (клик — лайк) */
-/* ======================================== */
 
-/* 1. Сердцевина закрашивается красным (без задержки) */
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s ease;
 }
 
-/* 2. Основное тело закрашивается красным с задержкой 0.06s */
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s ease 0.06s;
 }
 
-/* 3. Контур закрашивается красным с задержкой 0.12s */
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s ease 0.12s;
 }
 
-/* 4. Масштабирование сердца (с задержкой 0.1s) */
 .like-icon.is-liked .heart {
   animation: heart-scale 0.3s ease-in 0.1s forwards;
 }
 
-/* 5. Искры (с задержкой 0.3s) */
 .like-icon.is-liked .sparks {
   animation: sparks-animation 0.3s ease-in 0.3s forwards;
 }
 
-/* 6. Возврат контура при отключении лайка (быстро, 0.1s) */
 .like-icon:not(.is-liked) .contour {
   fill: var(--contour-color, #000000);
   transition: fill 0.1s linear;
@@ -378,9 +352,7 @@
   line-height: 90%;
 }
 
-/* ======================================== */
 /* ПОДВАЛ */
-/* ======================================== */
 
 .footer {
   display: flex;
@@ -405,9 +377,7 @@
   cursor: pointer;
 }
 
-/* ======================================== */
 /* МОДАЛЬНОЕ ОКНО (DIALOG) */
-/* ======================================== */
 
 .dialog {
   max-width: var(--max-width-dialog);
@@ -466,9 +436,7 @@
 }
 
 
-/* ======================================== */
 /* АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ (≤ 375px) */
-/* ======================================== */
 
 @media (max-width: 375px) {
   .page {
