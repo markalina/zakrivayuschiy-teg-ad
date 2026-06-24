@@ -457,13 +457,13 @@
     const openButton = document.querySelector('.footer__save-button');
     const closeButton = document.getElementById('dialog-close-btn');
 
-    // Открыть диалог по кнопке «Сохранить на память»
-    openButton.addEventListener('click', () => {
+    openButton.addEventListener('click', function(event) {
+      event.preventDefault();   // ← Добавить, если кнопка внутри формы
       dialog.showModal();
     });
 
-    // Закрыть диалог по кнопке «Ок»
-    closeButton.addEventListener('click', () => {
+    closeButton.addEventListener('click', function(event) {
+      event.preventDefault();   // ← Добавить, если кнопка внутри формы
       dialog.close();
     });
   </script>
