@@ -13,4 +13,493 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--main-font);
+  font-variation-settings: "wght" var(--main-font-weight);
+  font-size: var(--font-size-base, 18px);
+  color: var(--text-color, #000000);
+  padding: 100px var(--padding-page);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* ======================================== */
+/* ШАПКА */
+/* ======================================== */
+
+.header {
+  background-color: var(--background-color, #ffffff);
+  border: 2px solid var(--text-color, #000000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: var(--padding-header);
+  margin-bottom: 100px;
+}
+
+.header__title {
+  font-family: var(--accent-font);
+  font-size: var(--header-size-title);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.header__mintitle {
+  font-family: var(--accent-font);
+  font-size: var(--header-size-mintitle);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--text-color);
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--text-color, #000000);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-color, #000000);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button .button__text,
+.button svg {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  mix-blend-mode: difference;     /* ← ДОБАВЛЕНО */
+  transition: color 0.3s ease, fill 0.3s ease;
+}
+
+.button:hover .button__text,
+.button:hover svg {
+  color: var(--background-color, #ffffff);
+  fill: var(--background-color, #ffffff);
+}
+
+.button svg {
+  position: relative;
+  z-index: 1;
+  fill: var(--text-color, #000000);
+  transition: fill 0.3s ease;
+}
+
+.button:hover svg {
+  fill: var(--background-color, #ffffff);
+}
+
+/* ======================================== */
+/* ОСНОВНОЙ КОНТЕНТ */
+/* ======================================== */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--section-gap, 50px);
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+/* ======================================== */
+/* КАРТОЧКА */
+/* ======================================== */
+
+.card {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color, #ffffff);
+}
+
+.card__title {
+  font-family: var(--main-font);
+  font-variation-settings: "wght" var(--title-font-weight, 700);
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  padding: 5px 10px;
+  line-height: 120%;
+  border: 2px solid var(--text-color, #000000);
+}
+
+.card__image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: calc(100% - 4px);
+  overflow: hidden;
+  border-inline: 2px solid var(--text-color, #000000);
+  box-sizing: border-box;
+}
+
+.card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Карточка 1: Старт — тёплая сепия */
+.filter-start {
+  filter: sepia(0.5) brightness(1.05) saturate(1.1);
+}
+
+/* Карточка 2: Чистый лист — холодная свежесть */
+.filter-clean {
+  filter: brightness(1.05) contrast(1.1) saturate(1.2) hue-rotate(-5deg);
+}
+
+/* Карточка 3: Тревога — множественный фильтр (размытие + затемнение + холод) */
+.filter-anxiety {
+  filter: blur(1.2px) brightness(0.75) saturate(0.5) hue-rotate(15deg) contrast(0.9);
+}
+
+/* Карточка 4: Идеал — резкость и насыщенность */
+.filter-perfect {
+  filter: contrast(1.3) saturate(1.4) brightness(1.05);
+}
+
+/* Карточка 5: Тепло — тёплый оттенок и мягкость */
+.filter-warm {
+  filter: sepia(0.4) saturate(1.1) brightness(1.02) hue-rotate(-10deg);
+}
+
+/* Карточка 6: Стратегия — холодный и аналитический оттенок */
+.filter-strategy {
+  filter: saturate(0.7) hue-rotate(20deg) brightness(0.95) contrast(1.05);
+}
+
+/* Карточка 7: Усталость — приглушённые цвета, размытие */
+.filter-fog {
+  filter: blur(0.8px) brightness(0.8) saturate(0.5) grayscale(0.3);
+}
+
+/* Карточка 8: Осознание — яркость, контраст, лёгкий тёплый оттенок */
+.filter-here {
+  filter: brightness(1.1) contrast(1.15) saturate(1.1) sepia(0.1);
+}
+
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: clamp(13px, 3.4vw, 25px);
+  font-family: var(--accent-font, "PressStart2P", monospace);
+  font-size: var(--font-size-small);
+  font-weight: var(--main-font-weight);
+  text-transform: uppercase;
+  color: var(--label-text-color, #000000);
+  z-index: 2;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+@supports (text-stroke: 1px var(--label-stroke-color)) or
+  (-webkit-text-stroke: 1px var(--label-stroke-color)) {
+  .card__label {
+    color: var(--label-text-color, #000000);
+    -webkit-text-stroke: 1px var(--label-stroke-color, #ffffff);
+  }
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  gap: 25px;
+  border: 2px solid var(--text-color, #000000);
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--main-font);
+  font-variation-settings: "wght" var(--main-font-weight, 400);
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  line-height: 21px;
+  gap: 27px;
+}
+
+/* ======================================== */
+/* КНОПКИ В КАРТОЧКЕ */
+/* ======================================== */
+
+.card__button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  background-color: var(--background-color);
+}
+
+.card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+  width: 38.6px;
+  height: 38.6px;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--text-color, #000000);
+}
+
+.card__icon-button {
+  border-color: transparent;
+}
+
+/* ======================================== */
+/* АНИМАЦИЯ СЕРДЦА */
+/* ======================================== */
+
+.like-icon {
+  display: block;
+  cursor: pointer;
+  transform-origin: center;
+  --core-fill: none;
+  --contour-fill: var(--contour-color, #000000);
+  --body-fill: none;
+  --sparks-opacity: 0;
+  transition: --core-fill 0.3s ease, --body-fill 0.3s ease, --contour-fill 0.1s linear;
+}
+
+.like-icon .heart {
+  transform-origin: center;   /* ← ДОБАВИТЬ! */
+}
+
+.like-icon .sparks {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card__icon-button:hover .like-icon {
+  --core-fill: var(--contour-color, #000000);
+  --body-fill: var(--contour-color, #000000);
+  transition: --core-fill 0.3s ease, --body-fill 0.3s ease 0.05s;
+}
+
+.card__icon-button:not(:hover) .like-icon {
+  --core-fill: none;
+  --body-fill: none;
+  transition: --core-fill 0.3s ease 0.03s, --body-fill 0.3s ease;
+}
+
+.card__icon-button:active .like-icon {
+  --core-fill: var(--animation-fill-color, #ff0000);
+  --body-fill: var(--animation-fill-color, #ff0000);
+  transition: --core-fill 0.3s ease, --body-fill 0.3s ease 0.05s;
+}
+
+/* ======================================== */
+/* СОСТОЯНИЕ .is-liked (клик — лайк) */
+/* ======================================== */
+
+/* 1. Сердцевина закрашивается красным (без задержки) */
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color, #ff0000);
+  transition: fill 0.3s ease;
+}
+
+/* 2. Основное тело закрашивается красным с задержкой 0.06s */
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color, #ff0000);
+  transition: fill 0.3s ease 0.06s;
+}
+
+/* 3. Контур закрашивается красным с задержкой 0.12s */
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color, #ff0000);
+  transition: fill 0.3s ease 0.12s;
+}
+
+/* 4. Масштабирование сердца (с задержкой 0.1s) */
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s forwards;
+}
+
+/* 5. Искры (с задержкой 0.3s) */
+.like-icon.is-liked .sparks {
+  animation: sparks-animation 0.3s ease-in 0.3s forwards;
+}
+
+/* 6. Возврат контура при отключении лайка (быстро, 0.1s) */
+.like-icon:not(.is-liked) .contour {
+  fill: var(--contour-color, #000000);
+  transition: fill 0.1s linear;
+}
+
+.card__like-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  padding: 11px 36px;
+  border: 2px solid var(--text-color, #000000);
+  color: var(--text-color);
+  font-family: var(--accent-font);
+  font-size: var(--font-size-small);
+  font-variation-settings: "wght" var(--main-font-weight, 400);
+  line-height: 90%;
+}
+
+/* ======================================== */
+/* ПОДВАЛ */
+/* ======================================== */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 35px;
+}
+
+.footer__save-button {
+  background-color: var(--background-color);
+  border: 2px solid var(--text-color, #000000);
+  color: var(--text-color, #000000);
+  font-family: var(--accent-font);
+  font-size: var(--font-size-small);
+  padding: 15px 20px;
+  line-height: 90%;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* ======================================== */
+/* МОДАЛЬНОЕ ОКНО (DIALOG) */
+/* ======================================== */
+
+.dialog {
+  max-width: var(--max-width-dialog);
+  width: 100%;
+  padding: 30px;
+  border: 2px solid var(--text-color, #000000);
+  background-color: var(--background-color, #ffffff);
+  color: var(--text-color, #000000);
+  font-family: var(--accent-font);
+  font-size: var(--font-size-small);
+  font-weight: var(--main-font-weight);
+  line-height: 1.4;
+}
+
+.dialog::backdrop {
+  background-color: var(--text-color, #000000);
+  opacity: 0.75;
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.dialog__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__icon {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  fill: var(--text-color, #000000);
+}
+
+.dialog__text {
+  text-align: start;
+  margin: 0;
+}
+
+.dialog__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  min-width: 100%;
+  background: none;
+  border: 2px solid var(--text-color, #000000);
+  line-height: 90%;
+  cursor: pointer;
+}
+
+
+/* ======================================== */
+/* АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ (≤ 375px) */
+/* ======================================== */
+
+@media (max-width: 375px) {
+  .page {
+    padding: 100px var(--padding-page-mobile);
+  }
+
+  .header {
+    padding: 120px 14px;
+  }
+
+  .header__title {
+    font-size: 49px;
+  }
+
+  .header__mintitle {
+    font-size: var(--font-size-small);
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .footer__save-button {
+    flex-direction: column;
+    width: 100%;
+    max-width: 315px;
+    margin: 0 auto;
+    text-align: center;
+  }
 }

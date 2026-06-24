@@ -1,1 +1,52 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  /* ----- ЦВЕТА ----- */
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --label-stroke-color: #ffffff;
+  --label-text-color: #000000;
+  --contour-color: #000000;
+  --animation-fill-color: #ff0000;  
+  --background-image: 
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      180deg,
+      #e7e7e7 0.01%,
+      #1a1a1a 100%
+    );
+
+  /* ----- ШРИФТЫ ----- */
+  --main-font: 'Inter', sans-serif;
+  --accent-font: 'PressStart2P', monospace;
+  --main-font-weight: 400;
+  --title-font-weight: 700;
+
+  /* ----- РАЗМЕРЫ ----- */
+  --header-size-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --header-size-mintitle: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --font-size-base: 18px;
+  --font-size-small: 14px;
+  --section-gap: 50px;
+  --padding-page: clamp(0px, 25.7vw, 370px);
+  --padding-header: clamp(120px, 32vw, 128px) clamp(14px, 3.7vw, 120px);
+  --max-width-dialog: clamp(341px, 90vw, 353px);
+
+  /* ----- ОТСТУПЫ СТРАНИЦЫ (для адаптива) ----- */
+  --padding-page-mobile: 0px;
+}
