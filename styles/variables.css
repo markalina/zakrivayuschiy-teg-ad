@@ -9,8 +9,9 @@
   --label-stroke-color: #ffffff;
   --label-text-color: #000000;
   --contour-color: #000000;
-  --animation-fill-color: #ff0000;  
-  --background-image: 
+  --animation-fill-color: #ff0000;
+  
+  --background-image:
     repeating-linear-gradient(
       90deg,
       #d3d3d3 0px,
@@ -25,15 +26,11 @@
       transparent 2px,
       transparent 4px
     ),
-    linear-gradient(
-      180deg,
-      #e7e7e7 0.01%,
-      #1a1a1a 100%
-    );
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
 
   /* ----- ШРИФТЫ ----- */
-  --main-font: 'Inter', sans-serif;
-  --accent-font: 'PressStart2P', monospace;
+  --main-font: "Inter", sans-serif;
+  --accent-font: "PressStart2P", monospace;
   --main-font-weight: 400;
   --title-font-weight: 700;
 
